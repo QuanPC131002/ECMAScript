@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buổi 1 - Ôn tập JS Cơ bản</title>
+    
+  </head>
+  <body>
+    <h1>Xin chao cả lớp</h1>
+    <h2>Các kiến thức về BOM</h2>
+    <img src="./imgs/Preview.jpg" alt="BOM" width="100%" height="auto" />
+    <div class="card" id="card">
+      <!-- gắn nội dung vào đây bằng javascript -->
+    </div>
+    <ul id="product-list"></ul>
+    <script>
+      var myInfor = {
+        name: "quantm",
+        age: "21",
+        address: "HN",
+        languagesProgrammingLists: ["PHP", "JS", "Python", "Ruby"],
+      };
+     
+      var cardElement = document.getElementById("card");
+      console.log(cardElement);
+      cardElement.innerHTML= `
+      <h2>Tên : ${myInfor.name}</h2>
+      <h2>Tuổi : ${myInfor.age}</h2>
+      <h2>Địa chỉ : ${myInfor.address}</h2>
+      `;
+     var product = ["Gìay","Dép","Mũ"];
+     var productListElement = document.getElementById("product-list");
+
+    // Duyệt qua mảng sản phẩm và thêm mỗi sản phẩm vào danh sách
+    //sử dụng vòng lặp for để tạo một phần tử <li> cho mỗi sản phẩm
+    for (var i = 0; i < product.length; i++) {
+      var listItem = document.createElement("li");
+      listItem.textContent = product[i];
+      productListElement.appendChild(listItem);
+    }
+    </script>
+  </body>
+</html>
